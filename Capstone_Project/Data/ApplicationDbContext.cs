@@ -9,7 +9,7 @@ namespace Capstone_Project.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        DbSet<Traveller> Travellers { get; set; }
+        public DbSet<Traveller> Travellers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
