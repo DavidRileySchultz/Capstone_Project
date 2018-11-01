@@ -5,7 +5,7 @@ import { Home } from './components/Home';
 import { Register } from './components/_register/RegisterPage';
 import { Login } from './components/_login/LoginPage';
 import { TravellerHome } from './components/_traveller/TravellerHome';
-import { LogoutPage } from './components/_login/LogoutPage';
+import { Logout } from './components/_login/Logout';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { GroupContent } from './components/_traveller/GroupContent';
 
@@ -97,7 +97,7 @@ export default class App extends Component {
         var logout = null;
 
         if (this.state.tryLogout === true) {
-            logout = <LogoutPage cancel={cancelLogout} clickLogOut={doLogout} />
+            logout = <Logout cancel={cancelLogout} clickLogOut={doLogout} />
         }
 
         var login = null;

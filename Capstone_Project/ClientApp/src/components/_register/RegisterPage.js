@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Col, Row, Alert } from 'react-bootstrap';
-import { SubmitUserInfo } from './SubmitUserInfo'
-import '../MainStyles.css'
 
 
 export class Register extends Component {
@@ -41,15 +39,15 @@ export class Register extends Component {
                 body: JSON.stringify(data)
             }).then(this.handleResponse).then(function (response) { return response.json(); }).then(function (jsonData) { return resultId = jsonData.id; }).catch(function (error) { console.log(error); });
             console.log(resultId);
-            if (resultId !== null) {
+            //if (resultId !== null) {
 
-                this.setState({ id: resultId });
-                localStorage.clear();
-                localStorage.setItem('userId', this.state.id);
-                localStorage.setItem('firstname', this.state.first_name);
-                localStorage.setItem('lastname', this.state.last_name);
-                this.props.loggedIn();
-            }
+            //    this.setState({ id: resultId });
+            //    localStorage.clear();
+            //    localStorage.setItem('Id', this.state.id);
+            //    localStorage.setItem('firstname', this.state.first_name);
+            //    localStorage.setItem('lastname', this.state.last_name);
+            //    this.props.loggedIn();
+            //}
         }
         else {
             this.setState({
@@ -179,11 +177,6 @@ export class Register extends Component {
                         </Col>
                     </Row>
                 </div>
-            );
-        }
-        else {
-            return (
-                <SubmitUserInfo id={this.state.id} first_name={this.state.first_name} last_name={this.state.last_name} />
             );
         }
     }
