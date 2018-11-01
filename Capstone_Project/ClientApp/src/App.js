@@ -27,7 +27,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem('userId')) {
+        if (localStorage.getItem('travellerId')) {
             this.setState({
 
                 isLoggedIn: true,
@@ -124,7 +124,7 @@ export default class App extends Component {
                 {register}
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path='/users' component={TravellerHome} />
+                    <Route exact path='/travellers' component={TravellerHome} />
                     <Route exact path='/groups' component={GroupContent} />
                 </Switch>
             </Layout>

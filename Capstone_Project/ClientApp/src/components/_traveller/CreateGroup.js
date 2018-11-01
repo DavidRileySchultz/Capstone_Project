@@ -29,7 +29,7 @@ export class CreateGroup extends Component {
             var travellerId = localStorage.getItem('travellerId');
             var members = this.state.members.map(a => Number(a.value));
             const data = {
-                name: this.state.name,
+                groupName: this.state.groupName,
                 members: members, travellerId: travellerId
             };
             await fetch('api/Groups/Create', {
@@ -62,24 +62,24 @@ export class CreateGroup extends Component {
     }
 
     canSubmit() {
-        return this.state.name !== '';
+        return this.state.groupName !== '';
     }
 
     handleChange(event) {
         const target = event.target;
         const value = target.value;
-        const name = target.name;
+        const groupName = target.groupName;
         this.setState({
-            [name]: value
+            [groupName]: value
         });
     }
 
     searchTest(term2) {
         let terms = term2.toString().trim().toLowerCase().replace(/[^A-Za-z0-9\s]/g, "");
-        let url = `/api/Travellers/UniversalUserSearch?term1=${terms}`;
+        let url = `/api/Travellers/UniversalTravellerSearch?term1=${terms}`;
         fetch(url).then(response => response.json())
             .then(jsonData => {
-                let membersToSelect = jsonData.map(member => { return { value: member.id, display: `${member.name} - ${member.location}` } });
+                let membersToSelect = jsonData.map(member => { return { value: member.id, display: `${member.name}` } });
                 this.setState({ membersToAdd: membersToSelect });
             })
             .catch(error => console.log(error));

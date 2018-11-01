@@ -16,11 +16,11 @@ namespace Capstone_Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class TravellersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public UsersController(ApplicationDbContext context)
+        public TravellersController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -81,7 +81,7 @@ namespace Capstone_Project.Controllers
             return GetUserInfoFromTraveller(traveller);
         }
 
-        // POST: api/Users
+        // POST: api/Travellers
         [HttpPost("[action]")]
         public async Task<IActionResult> Create([FromBody] TravellerViewModel data)
         {
@@ -161,14 +161,14 @@ namespace Capstone_Project.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<SearchTravellerViewModel> SearchUsersByName(string first_name = null, string last_name = null)
+        public IEnumerable<SearchTravellerViewModel> SearchTravellersByName(string first_name = null, string last_name = null)
         {
             IEnumerable<Traveller> matches = SearchByName(first_name, last_name);
             return GetSearchMatches(matches);
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<SearchTravellerViewModel> UniversalUserSearch(string term1)
+        public IEnumerable<SearchTravellerViewModel> UniversalTravellerSearch(string term1)
         {
             if (term1 == null)
             {

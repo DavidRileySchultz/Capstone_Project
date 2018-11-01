@@ -33,7 +33,7 @@ export class Login extends Component {
         };
         event.preventDefault();
         var resultData = null;
-        await fetch('api/Users/Login', {
+        await fetch('api/Travellers/Login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -44,7 +44,7 @@ export class Login extends Component {
 
             this.setState({ id: resultData.id });
             localStorage.clear();
-            localStorage.setItem('userId', resultData.id);
+            localStorage.setItem('travellerId', resultData.id);
             localStorage.setItem('firstname', resultData.first_name);
             localStorage.setItem('lastname', resultData.last_name);
             this.props.loggedIn();
@@ -87,7 +87,7 @@ export class Login extends Component {
             height: "85vh",
         };
         if (this.state.id != null) {
-            return <Redirect to="/routes" />
+            return <Redirect to="/travellers" />
         }
         return (
             <div style={style}>
