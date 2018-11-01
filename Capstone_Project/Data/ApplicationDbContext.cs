@@ -12,6 +12,7 @@ namespace Capstone_Project.Data
         public DbSet<Traveller> Travellers { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<GroupMember> GroupMembers { get; set; }
+        public DbSet<JournalEntry> JournalEntries { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
