@@ -8,7 +8,7 @@ using Capstone_Project.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CapstoneProject.Controllers
+namespace Capstone_Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

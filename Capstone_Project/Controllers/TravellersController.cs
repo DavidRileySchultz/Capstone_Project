@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Protocols;
 using Capstone_Project.Data;
 
 
-namespace CapstoneProject.Controllers
+namespace Capstone_Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

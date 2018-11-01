@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Col, Row, Alert } from 'react-bootstrap';
-import './MainStyles.css';
+import '../MainStyles.css';
 
 
 export class Register extends Component {

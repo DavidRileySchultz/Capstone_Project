@@ -10,7 +10,7 @@ export class CreateGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            groupName: '',
             members: [],
             membersToAdd: [],
             errorMessage: ''
@@ -26,11 +26,11 @@ export class CreateGroup extends Component {
             this.setState({ errorMessage: "Can't create without a name!" });
         }
         else {
-            var userId = localStorage.getItem('userId');
+            var travellerId = localStorage.getItem('travellerId');
             var members = this.state.members.map(a => Number(a.value));
             const data = {
                 name: this.state.name,
-                members: members, userId: userId
+                members: members, travellerId: travellerId
             };
             await fetch('api/Groups/Create', {
                 method: 'POST',
@@ -62,7 +62,7 @@ export class CreateGroup extends Component {
     }
 
     canSubmit() {
-        return this.state.name !== '' && this.state.description !== '';
+        return this.state.name !== '';
     }
 
     handleChange(event) {
@@ -76,7 +76,7 @@ export class CreateGroup extends Component {
 
     searchTest(term2) {
         let terms = term2.toString().trim().toLowerCase().replace(/[^A-Za-z0-9\s]/g, "");
-        let url = `/api/Users/UniversalUserSearch?term1=${terms}`;
+        let url = `/api/Travellers/UniversalUserSearch?term1=${terms}`;
         fetch(url).then(response => response.json())
             .then(jsonData => {
                 let membersToSelect = jsonData.map(member => { return { value: member.id, display: `${member.name} - ${member.location}` } });
