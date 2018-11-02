@@ -20,7 +20,6 @@ namespace Capstone_Project.Controllers
             _context = context;
         }
 
-
         // POST: api/Groups
         [HttpPost("[action]")]
         public async Task<IActionResult> Create([FromBody] GroupViewModel data)
@@ -30,11 +29,11 @@ namespace Capstone_Project.Controllers
                 try
                 {
                     Group group = new Group();                    
-                    group.GroupName = data.groupName;
+                    group.Name = data.name;
                     group.GroupId = data.groupId;
                     _context.Groups.Add(group);
                     await _context.SaveChangesAsync();
-                    int thisGroupId = FindGroupIdByName(data.groupName);
+                    int thisGroupId = FindGroupIdByName(data.name);
                     return Ok();
                 }
                 catch
@@ -50,7 +49,7 @@ namespace Capstone_Project.Controllers
 
         private int FindGroupIdByName(string groupName)
         {
-            var thisGroup = _context.Groups.Where(a => a.GroupName == groupName).ToList();
+            var thisGroup = _context.Groups.Where(a => a.Name == groupName).ToList();
             if (thisGroup.Count() > 1)
             {
                 thisGroup = thisGroup.OrderByDescending(a => a.GroupId).ToList();

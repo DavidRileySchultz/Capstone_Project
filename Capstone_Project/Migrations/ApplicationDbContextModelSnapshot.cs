@@ -25,7 +25,7 @@ namespace Capstone_Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("GroupName");
+                    b.Property<string>("Name");
 
                     b.HasKey("GroupId");
 

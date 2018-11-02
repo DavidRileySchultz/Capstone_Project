@@ -83,7 +83,7 @@ export class Login extends Component {
         const style = {
             //backgroundImage: `url(${Background})`,
             //backgroundSize: "contain",
-            backgroundColor: "purple",
+            backgroundColor: "orange",
             height: "85vh",
         };
         if (this.state.id != null) {

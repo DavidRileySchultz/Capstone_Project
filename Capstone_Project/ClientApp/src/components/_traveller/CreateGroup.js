@@ -10,7 +10,7 @@ export class CreateGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            groupName: '',
+            name: '',
             members: [],
             membersToAdd: [],
             errorMessage: ''
@@ -23,13 +23,13 @@ export class CreateGroup extends Component {
     async submitGroup(event) {
         event.preventDefault();
         if (!this.canSubmit()) {
-            this.setState({ errorMessage: "Can't create without a name!" });
+            this.setState({ errorMessage: "Can't create without group name!" });
         }
         else {
             var travellerId = localStorage.getItem('travellerId');
             var members = this.state.members.map(a => Number(a.value));
             const data = {
-                groupName: this.state.groupName,
+                name: this.state.name,
                 members: members, travellerId: travellerId
             };
             await fetch('api/Groups/Create', {
@@ -62,15 +62,15 @@ export class CreateGroup extends Component {
     }
 
     canSubmit() {
-        return this.state.groupName !== '';
+        return this.state.name !== '';
     }
 
     handleChange(event) {
         const target = event.target;
         const value = target.value;
-        const groupName = target.groupName;
+        const name = target.name;
         this.setState({
-            [groupName]: value
+            [name]: value
         });
     }
 
@@ -87,7 +87,7 @@ export class CreateGroup extends Component {
 
     render() {
         const membersAdded = this.state.members.map((member) => <ListGroupItem key={member.value}>{member.display}</ListGroupItem>)
-        const memberSearch = _.debounce((term2) => { this.searchTest(term2) }, 1000);
+        const memberSearch = _.debounce((term2) => { this.searchTest(term2) }, 650);
         const addMember = ((selectedMember) => { this.addSelectedMember(selectedMember) });
         const style = {
             backgroundColor: "orange",

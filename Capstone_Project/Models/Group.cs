@@ -10,7 +10,7 @@ namespace Capstone_Project.Models
     {
         [Key]
         public int GroupId { get; set; }
-        [Display(Name = "Group Name")]
-        public string GroupName { get; set; }
+        public string Name { get; set; }
+
     }
 }

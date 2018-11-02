@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Capstone_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181101203836_added in table for journal entries")]
-    partial class addedintableforjournalentries
+    [Migration("20181102141545_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace Capstone_Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("GroupName");
+                    b.Property<string>("Name");
 
                     b.HasKey("GroupId");
 

@@ -70,7 +70,7 @@ export class Register extends Component {
             return response;
         }
         else if (response.status === 409) {
-            errorText = 'That email already exists!';
+            errorText = 'Email already in use!';
         }
         else {
             errorText = 'Unable to get a response from the server.';
@@ -104,7 +104,7 @@ export class Register extends Component {
 
     render() {
         const style = {
-            backgroundColor: "purple",
+            backgroundColor: "orange",
             height: "85vh",
         }
         if (this.state.id === null) {
