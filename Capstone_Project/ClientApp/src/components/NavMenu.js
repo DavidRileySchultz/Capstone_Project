@@ -55,6 +55,11 @@ export class NavMenu extends Component {
                                     GROUPS
                                 </NavItem>
                             </LinkContainer>
+                            <LinkContainer to='/journals'>
+                                <NavItem>
+                                    JOURNAL
+                                </NavItem>
+                            </LinkContainer>
                         </Nav>
                         <Nav pullRight>
                             <NavItem onClick={this.props.tryLogout} >
