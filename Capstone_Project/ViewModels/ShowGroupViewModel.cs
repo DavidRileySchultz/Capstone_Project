@@ -14,7 +14,6 @@ namespace Capstone_Project.ViewModels
     public class ShowGroupViewModels
     {
         public List<ShowGroupViewModel> groupsIn { get; set; }
-        public List<ShowGroupViewModel> groupsOwn { get; set; }
     }
 }
 
