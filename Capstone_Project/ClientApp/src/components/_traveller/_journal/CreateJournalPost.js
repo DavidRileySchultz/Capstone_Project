@@ -47,7 +47,7 @@ export class CreateJournalPost extends Component {
     }
 
     render() {
-        const journalEntryAdded = this.state.content.map((content) => )
+        const journalEntryAdded = this.state.content.map((content) => <ListGroupItem key={content.value}>{content.display}</ListGroupItem>)
         const style = {
             backgroundColor: "orange",
             height: "85vh"
@@ -104,8 +104,22 @@ export class CreateJournalPost extends Component {
                     </Col>
                     <Col md={4}>
                         <div style={journalEntryBox}>
-                            <h3>Journal Entry!:</h3>
-                            
-            )
+                            <h3>Journal Entries!:</h3>
+                            <ListGroup>
+                                {journalEntryAdded}
+                            </ListGroup>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={1} mdOffset={1}>
+                        <a className="smaller-action-buttons" onClick={this.proper.returnToJournalHome}>Back</a>
+                    </Col>
+                    <Col md={2}>
+                        <a className="btn action-button" onClick={(event) => this.submitJournalEntry(event)}>Finish</a>
+                    </Col>
+                </Row>
+            </div>
+        );
     }
 }
