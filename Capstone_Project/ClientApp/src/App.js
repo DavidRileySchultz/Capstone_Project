@@ -8,7 +8,7 @@ import { TravellerHome } from './components/_traveller/TravellerHome';
 import { Logout } from './components/_login/Logout';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { GroupContent } from './components/_traveller/GroupContent';
-import JournalHome from './components/_traveller/_journal/JournalHome';
+import { JournalHomeContent } from './components/_traveller/_journal/JournalHomeContent';
 
 
 export default class App extends Component {
@@ -127,7 +127,7 @@ export default class App extends Component {
                     <Route exact path="/" component={Home} />
                     <Route exact path='/travellers' component={TravellerHome} />
                     <Route exact path='/groups' component={GroupContent} />
-                    <Route exact path='/journals' component={JournalHome} />
+                    <Route exact path='/journals' component={JournalHomeContent} />
                 </Switch>
             </Layout>
         );
