@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import image from './TravellerImages/Travel.jpg'
-import { GoogleMapsContainer } from './_mapComponents/GoogleMapsContainer';
+import GoogleMapsContainer from './_mapComponents/GoogleMapsContainer';
 
 export class HomeContent extends Component {
     constructor(props) {

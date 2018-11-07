@@ -1,7 +1,7 @@
-﻿import React from 'react';
+﻿import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker, Paper, Typography } from 'google-maps-react';
 
-export class GoogleMapsContainer extends React.Component {
+export class GoogleMapsContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,8 +44,7 @@ export class GoogleMapsContainer extends React.Component {
                 onClick={this.onMapClick}
                 zoom={14}
                 initialCenter={{ lat: 43.034055, lng: -87.911680 }}
-            >    
-
+            >   
                 <Marker
                     onClick={this.onMarkerClick}
                     title={'Pritzlaff'}
@@ -62,12 +61,11 @@ export class GoogleMapsContainer extends React.Component {
                             component='h4'
                         >
                             Pritzlaff
-            </Typography>
+                        </Typography>
                         <Typography
                             component='p'
                         >
                             313 N Plankinton Ave Milwaukee, WI 53203 <br />
-
                         </Typography>
                     </Paper>
                 </InfoWindow>
