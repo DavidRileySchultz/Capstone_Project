@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\components\WebsiteImages\" />
+    <Folder Include="ClientApp\src\components\_traveller\_hotelComponents\" />
     <Folder Include="ClientApp\src\components\_traveller\TravellerImages\" />
   </ItemGroup>
 
