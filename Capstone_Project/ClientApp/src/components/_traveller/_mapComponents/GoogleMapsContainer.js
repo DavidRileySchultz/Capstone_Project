@@ -12,6 +12,7 @@ export class GoogleMapsContainer extends Component {
         this.onMarkerClick = this.onMarkerClick.bind(this);
         this.onMapClick = this.onMapClick.bind(this);
     }
+
     onMarkerClick = (props, marker, e) => {
         this.setState({
             selectedPlace: props,
@@ -27,6 +28,17 @@ export class GoogleMapsContainer extends Component {
             });
         }
     }
+//    google.maps.event.addListener(map, 'click', function(e) {
+//        placeMarker(e.latLng, map);
+//    });
+
+//    function placeMarker(position, map) {
+//    var marker = new google.maps.Marker({
+//        position: position,
+//        map: map
+//    });
+//    map.panTo(position);
+//}
     render() {
         const style = {
             width: '97.5vw',
@@ -76,4 +88,5 @@ export class GoogleMapsContainer extends Component {
 export default GoogleApiWrapper({
     apiKey: ('AIzaSyB_aYx1jKUwUB2OSOsUaTtsSfXfGbfxBHA')
 })(GoogleMapsContainer)
+
 

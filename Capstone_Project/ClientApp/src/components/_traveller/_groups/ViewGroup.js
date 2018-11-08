@@ -45,7 +45,7 @@ export class ViewGroup extends Component {
                 </ListGroup>
             </Row>
         }
-        else if (this.props.viewingGroupDetails === "Events") {
+        else if (this.props.viewingGroupDetails === "Trips") {
             contents = <h2>
                 Events
                 </h2>

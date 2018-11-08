@@ -7,6 +7,15 @@ export class HomeContent extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        const script = document.createElement("script");
+
+        script.src = "https://widgets.skyscanner.net/widget-server/js/loader.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+    }
+
     render() {
         const background = {
             height: "89vh",
@@ -18,10 +27,10 @@ export class HomeContent extends Component {
 
         return (
             <div>
-                <div style={background}>
-                </div>
+                <div data-skyscanner-widget="SearchWidget"></div>
                 <GoogleMapsContainer />
             </div>
         );
     }
 }
+
