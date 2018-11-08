@@ -29,7 +29,7 @@ export class GoogleMapsContainer extends Component {
     }
     render() {
         const style = {
-            width: '50vw',
+            width: '97.5vw',
             height: '75vh',
             'marginLeft': 'auto',
             'marginRight': 'auto'
@@ -42,7 +42,7 @@ export class GoogleMapsContainer extends Component {
                 style={style}
                 google={this.props.google}
                 onClick={this.onMapClick}
-                zoom={14}
+                zoom={2}
                 initialCenter={{ lat: 43.034055, lng: -87.911680 }}
             >   
                 <Marker

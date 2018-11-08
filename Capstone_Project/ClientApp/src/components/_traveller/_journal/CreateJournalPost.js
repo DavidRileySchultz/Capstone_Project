@@ -1,7 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Col, ListGroupItem, ListGroup, ColProps, Row, Alert } from 'react-bootstrap';
 import { Route, Link, Redirect, withRouter, BrowserRouter } from 'react-router-dom';
-import { NavMenu } from '../NavMenu';
 import _ from 'lodash';
 
 export class CreateJournalPost extends Component {
