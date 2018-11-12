@@ -39,7 +39,7 @@ class DisplayEntries extends Component {
                     <div />
                     <div className="card-content">
                         <ButtonPosition extra>
-                            <CreateButton size="massive" as={Link} to='/dashboard/writeentry'> + </CreateButton>
+                            <CreateButton size="massive" as={Link} to='/journals/create'> + </CreateButton>
                         </ButtonPosition>
                         <Card.Header>
                             Create a new entry!
@@ -47,9 +47,7 @@ class DisplayEntries extends Component {
                     </div>
 
                 </Card>
-                {this.props.entries.length ?
-                    this.props.entries.map(this.displayEntryPreview) :
-                    null}
+                
             </CardWrapper>
 
         )

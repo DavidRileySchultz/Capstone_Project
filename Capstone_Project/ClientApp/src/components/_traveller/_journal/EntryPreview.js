@@ -20,7 +20,7 @@ class EntryPreview extends Component {
             <Grid.Column>
                 {this.state.imageDeleted ? <Card.Header>Entry successfully deleted. </Card.Header> :
                     <Card>
-                        <Link to={`/dashboard/readentry/${this.props.data.id}`}>
+                        <Link to={`/travellers/${this.props.data.id}`}>
                             <Image src={this.props.data.thumbnail_image_url} height='226px' width='290px' />
                         </Link>
                         <Card.Content>

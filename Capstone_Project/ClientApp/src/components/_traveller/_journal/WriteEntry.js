@@ -216,8 +216,7 @@ class WriteEntry extends Component {
                                     />
                                 </AnswerWrapper>
                             </ContentWrapper>
-                            <ContentWrapper>
-                               
+                            <ContentWrapper>                          
                           
                                 <QuestionWrapper>
                                     <Question>notes</Question>
