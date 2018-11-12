@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react-google-autocomplete": "^1.0.15",
+    "semantic-ui-react": "^0.76.0",
+    "styled-components": "^2.2.3",
     "react-simple-maps": "0.12.1",
     "create-react-class": "^15.6.3",
     "google-maps-react": "^2.0.2",

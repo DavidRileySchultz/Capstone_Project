@@ -47,7 +47,9 @@ export class ViewGroup extends Component {
         }
         else if (this.props.viewingGroupDetails === "Trips") {
             contents = <h2>
-                Events
+                
+                
+                s
                 </h2>
         }
 

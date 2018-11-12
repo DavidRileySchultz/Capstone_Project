@@ -8,12 +8,13 @@ export class HomeContent extends Component {
     }
 
     componentDidMount() {
-        const script = document.createElement("script");
-
-        script.src = "https://widgets.skyscanner.net/widget-server/js/loader.js";
-        script.async = true;
-
-        document.body.appendChild(script);
+        const skyScanner = document.createElement("script");
+        const kayak = document.createElement("script");
+        skyScanner.src = "https://widgets.skyscanner.net/widget-server/js/loader.js";
+        skyScanner.async = true;
+        kayak.src = "https://www.kayak.com/affiliate/widget-v2.js";
+        
+        document.body.appendChild(skyScanner, kayak);
     }
 
     render() {
@@ -27,7 +28,9 @@ export class HomeContent extends Component {
 
         return (
             <div>
-                <div data-skyscanner-widget="SearchWidget"></div>
+                <div data-skyscanner-widget="SearchWidget" data-locale="en-US" data-enable-placeholders="true" data-params="colour:lunar;fontColour:malt;buttonColour:loch;buttonFontColour:malt;"></div>
+                <div id="kayakSearchWidgetContainer"></div>
+                <center><h2>Keep Track of Where you've Been!</h2></center>
                 <GoogleMapsContainer />
             </div>
         );

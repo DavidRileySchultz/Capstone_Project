@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker, Paper, Typography } from 'google-maps-react';
+import google, { GoogleApiWrapper, InfoWindow, Map, Marker, Paper, Typography } from 'google-maps-react';
 
 export class GoogleMapsContainer extends Component {
     constructor(props) {
@@ -20,25 +20,27 @@ export class GoogleMapsContainer extends Component {
             showingInfoWindow: true
         });
     }
-    onMapClick = (props) => {
-        if (this.state.showingInfoWindow) {
-            this.setState({
-                showingInfoWindow: false,
-                activeMarker: null
+    onMapClick = (map) => {
+        //if (this.state.showingInfoWindow) {
+        //    this.setState({
+        //        showingInfoWindow: false,
+        //        activeMarker: null
+        //    });
+        google.maps.event.addListener(map, 'click', function (event) {
+            placeMarker(event.latLng);
+        });
+
+        function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
             });
         }
-    }
-//    google.maps.event.addListener(map, 'click', function(e) {
-//        placeMarker(e.latLng, map);
-//    });
 
-//    function placeMarker(position, map) {
-//    var marker = new google.maps.Marker({
-//        position: position,
-//        map: map
-//    });
-//    map.panTo(position);
-//}
+          
+        
+    }
+
     render() {
         const style = {
             width: '97.5vw',
@@ -46,7 +48,7 @@ export class GoogleMapsContainer extends Component {
             'marginLeft': 'auto',
             'marginRight': 'auto'
         }
-
+        
         return (
             <Map
                 item

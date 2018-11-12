@@ -6,7 +6,6 @@ import { Register } from './components/_register/RegisterPage';
 import { Login } from './components/_login/LoginPage';
 import { TravellerHome } from './components/_traveller/TravellerHome';
 import { Logout } from './components/_login/Logout';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { GroupContent } from './components/_traveller/GroupContent';
 import { JournalHome } from './components/_traveller/_journal/JournalHome';
 
