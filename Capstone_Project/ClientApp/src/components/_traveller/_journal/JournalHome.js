@@ -1,6 +1,4 @@
 ﻿import React, { Component } from 'react';
-import WriteEntry from './WriteEntry';
-import EntryPreview from './EntryPreview';
 import DisplayEntries from './DisplayEntries';
 
 export class JournalHome extends Component {

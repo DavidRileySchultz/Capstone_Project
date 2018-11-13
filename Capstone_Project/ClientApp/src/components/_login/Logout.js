@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 export class Logout extends Component {

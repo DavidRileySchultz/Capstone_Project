@@ -1,6 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Checkbox, Form, FormGroup, FormControl, ControlLabel, Col, ColProps, Row, ButtonToolbar } from 'react-bootstrap';
-import { Route, Link, Redirect, withRouter, BrowserRouter } from 'react-router-dom';
+import { FormGroup, FormControl } from 'react-bootstrap';
 
 
 export class SearchMembers extends Component {

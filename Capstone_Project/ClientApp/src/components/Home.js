@@ -22,17 +22,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import Background from "./WebsiteImages/Background.jpg"
-
 
 
 const Wrapper = styled.div`
     min-height: 100vh;
-    width: 100%;
-    background: url('Components/WebsiteImages/Background.jpg');
+    width: 100%;    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: blue;
 `;
 
 const Title = styled.h1`
@@ -41,8 +39,8 @@ const Title = styled.h1`
   align-items: center;
   font-size: 4.3em;
   font-family: 'Sue Ellen Francisco', cursive;
-  color: rgb(55, 85, 109);
-  padding-bottom: 0.2em;
+  color: #fff;
+  padding-bottom: 0;
 `;
 
 const LandingButton = styled.button`
@@ -60,28 +58,22 @@ const LandingButton = styled.button`
 
 const Div = styled.div`
   position: absolute;
-  bottom: 4%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
 `;
 
 
+
 export class Home extends Component {
     render() {
+       
         return (
+            
             <Wrapper>
                 <Div>
-                    <Title>Welcome to BonVoyage</Title>
-                    <center>
-                    <div>
-                            <div onClick={this.props.onClickingRegister}>
-                                <LandingButton>SIGN UP</LandingButton>
-                        
-                                <Link to="/login"><LandingButton>Log In</LandingButton></Link>
-                        </div>
-                    </div>
-                    </center>
+                    <Title>Welcome to BonVoyage</Title>    
                 </Div>
             </Wrapper>
         )

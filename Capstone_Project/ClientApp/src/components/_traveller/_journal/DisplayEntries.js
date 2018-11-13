@@ -39,7 +39,7 @@ class DisplayEntries extends Component {
                     <div />
                     <div className="card-content">
                         <ButtonPosition extra>
-                            <CreateButton size="massive" as={Link} to='/journals/create'> + </CreateButton>
+                            <CreateButton size="massive" as={Link} to='/journalHome/WriteEntries'> + </CreateButton>
                         </ButtonPosition>
                         <Card.Header>
                             Create a new entry!

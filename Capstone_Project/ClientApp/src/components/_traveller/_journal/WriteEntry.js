@@ -66,7 +66,7 @@ const AnswerWrapper = styled.div`
   padding: 1rem;
     flex-direction: column;
     display: flex;
-
+    
 `
 
 const Question = styled.header`

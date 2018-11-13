@@ -1,6 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Button, Form, FormGroup, FormControl, ControlLabel, Col, ColProps, Row, ButtonToolbar } from 'react-bootstrap';
-import { Route, Link, Redirect, withRouter, BrowserRouter } from 'react-router-dom';
+import { ListGroupItem } from 'react-bootstrap';
 
 export class MemberListItem extends Component {
     constructor(props) {

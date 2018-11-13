@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Button, Form, FormGroup, FormControl, ControlLabel, Col, Row, Alert } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Col, Row, Alert } from 'react-bootstrap';
 import '../MainStyles.css';
 
 

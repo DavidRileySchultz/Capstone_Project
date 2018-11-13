@@ -26,9 +26,6 @@ export class GoogleMapsContainer extends Component {
         //        showingInfoWindow: false,
         //        activeMarker: null
         //    });
-        google.maps.event.addListener(map, 'click', function (event) {
-            placeMarker(event.latLng);
-        });
 
         function placeMarker(location) {
             var marker = new google.maps.Marker({
@@ -36,6 +33,9 @@ export class GoogleMapsContainer extends Component {
                 map: map
             });
         }
+        google.maps.event.addListener(map, 'click', function (event) {
+            placeMarker(event.latLng);
+        });
 
           
         
