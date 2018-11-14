@@ -2,6 +2,7 @@
 import { Button } from 'react-bootstrap';
 import { CreateJournalPost } from './CreateJournalPost';
 
+
 export class JournalHomeContent extends Component {
 
     constructor(props) {

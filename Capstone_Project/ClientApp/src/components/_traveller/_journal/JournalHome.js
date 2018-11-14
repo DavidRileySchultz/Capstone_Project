@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import DisplayEntries from './DisplayEntries';
+import WriteEntry from './WriteEntry';
 
 export class JournalHome extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export class JournalHome extends Component {
             <div>
                 <h2> My Travel Journal </h2>
                 <h4> The world is a book, and those who do not travel only read one page. </h4>
-                <DisplayEntries />
+                <WriteEntry />
 
             </div>
         );
