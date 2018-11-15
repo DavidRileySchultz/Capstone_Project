@@ -83,7 +83,8 @@ class WriteEntry extends Component {
         this.state = {
             title: '',
             content: ''
-        };
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     selectImage = photo => {
         this.setState({
@@ -106,32 +107,46 @@ class WriteEntry extends Component {
             this.setState({ errorMessage: "Please fill out all fields!" });
         }
         else {
-            var uploadImage = this.state.chosenPhoto;
+            var travellerId = localStorage.getItem('travellerId');
             const data = {
                 title: this.state.title,
-                content: this.state.content               
+                content: this.state.content, travellerId: travellerId
             };
+            await fetch('api/Journals/Create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(error => console.log(error));
+            this.props.returnToJournalHome();
+            //var uploadImage = this.state.chosenPhoto;
+            //const data = {
+            //    title: this.state.title,
+            //    content: this.state.content               
+            //};
             
-            const p2 = uploadImage.userUploaded
-                (console.log(
-                    'User chose to upload photo.',
-                    uploadImage
-                ),
-                this.setState({ loadingWrite: true }),
-                    storageRef
-                    .child(
-                        `user_uploaded_photos/${travellerId}/${
-                        this.state.title
-                        }/${uploadImage.name}`
-                    )
-                    .put(uploadImage)
-                    .then(snapshot => {
-                        data.full_image_url = snapshot.downloadURL;
-                        data.thumbnail_image_url = snapshot.downloadURL;
-                    }))
+            //const p2 = uploadImage.userUploaded
+            //    (console.log(
+            //        'User chose to upload photo.',
+            //        uploadImage
+            //    ),
+            //    this.setState({ loadingWrite: true }),
+            //        storageRef
+            //        .child(
+            //            `user_uploaded_photos/${travellerId}/${
+            //            this.state.title
+            //            }/${uploadImage.name}`
+            //        )
+            //        .put(uploadImage)
+            //        .then(snapshot => {
+            //            data.full_image_url = snapshot.downloadURL;
+            //            data.thumbnail_image_url = snapshot.downloadURL;
+            //        }))
         }        
     };
-   
+
+    canSubmit() {
+        return this.state.title !== '';
+    }
     render() {
         return (
             <div style={{ display: 'flex', 'align-content': 'center', 'justify-content': 'center' }} >
